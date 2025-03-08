@@ -1,0 +1,234 @@
+/* Footer Container */
+.footer-contain {
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  background-color: #1a242f; /* Dark charcoal background */
+  color: #ecf0f1; /* Light text color */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Footer Top */
+.footer {
+  background-color: #1a242f; /* Dark Charcoal Background */
+  color: #ecf0f1; /* Light Gray Text */
+  border-top: 5px solid #f39c12; /* Gold accent on top border */
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  margin: 0 auto;
+}
+
+/* Left Column (Brand and Copyright) */
+.footer-top h2 {
+  color: #f39c12; /* Bright gold for brand name */
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.footer-top p {
+  color: #bdc3c7; /* Light gray for copyright text */
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.footer-middle {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.footer-middle p {
+  font-size: 14px;
+  color: #bdc3c7;
+}
+
+.footer-middle h3 {
+  font-size: 25px;
+  color: #8f8f8f;
+}
+
+/* Middle Column (About Us and Quick Links) */
+.footer-middle-right {
+  margin-bottom: 10px;
+}
+
+.footer-middle-left h3,
+.footer-middle-right h3 {
+  color: #8f8f8f; /* Light color for section headings */
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-middle-left ul,
+.footer-middle-right .social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 15px; /* Space between list items */
+  padding: 0;
+  list-style: none;
+}
+
+.footer-middle-left ul li {
+  margin-bottom: 10px;
+}
+
+.footer-middle-left ul li a,
+.footer-middle-right .social-links a {
+  color: #ecf0f1; /* Light color for links */
+  font-size: 20px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-middle-left ul li a:hover {
+  color: #f39c12; /* Gold color on hover */
+  text-decoration: underline;
+}
+
+.footer-middle-right .social-links a:hover {
+  color: #f39c12; /* Gold background on hover */
+  text-decoration: underline;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  margin-top: 20px;
+  background-color: black;
+}
+
+.footer-bottom p {
+  color: #bdc3c7; /* Light gray text for bottom section */
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-bottom p:hover {
+  color: #ecf0f1; /* Light text on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text in the container */
+  }
+
+  .footer-top h2 {
+    font-size: 24px;
+  }
+
+  .footer-middle-left ul li a,
+  .footer-middle-right .social-links a {
+    font-size: 18px;
+  }
+
+  .footer-middle-left ul li {
+    margin-bottom: 8px;
+  }
+
+  .footer-middle-right .social-links {
+    gap: 10px;
+  }
+
+  .footer-bottom p {
+    font-size: 16px; /* Slightly bigger text for readability */
+  }
+}
+
+/* Responsive Design for Smaller Tablets & Mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .footer-top h2 {
+    font-size: 22px;
+  }
+
+  .footer-top p {
+    font-size: 12px;
+  }
+
+  .footer-middle {
+    margin-bottom: 15px;
+  }
+
+  .footer-middle-left ul li a,
+  .footer-middle-right .social-links a {
+    font-size: 16px;
+  }
+
+  .footer-middle-left ul li {
+    margin-bottom: 6px;
+  }
+
+  .footer-middle-right .social-links {
+    gap: 8px;
+  }
+
+  .footer-bottom p {
+    font-size: 14px;
+  }
+}
+
+/* Mobile First Design (for mobile screens) */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+
+  .footer-top h2 {
+    font-size: 20px;
+  }
+
+  .footer-top p {
+    font-size: 12px;
+  }
+
+  .footer-middle-left ul li a,
+  .footer-middle-right .social-links a {
+    font-size: 14px;
+  }
+
+  .footer-middle-left ul li {
+    margin-bottom: 4px;
+  }
+
+  .footer-middle-right .social-links {
+    gap: 6px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+/* Extra small screens (portrait mode) */
+@media (max-width: 375px) {
+  .footer-top h2 {
+    font-size: 18px; /* Decrease font size */
+  }
+
+  .footer-middle-left ul li a,
+  .footer-middle-right .social-links a {
+    font-size: 14px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px; /* Ensure readability */
+  }
+}

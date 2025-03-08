@@ -1,0 +1,268 @@
+/* General Home Page Styling */
+.home {
+  font-family: "Roboto", sans-serif; /* Smooth UI font */
+  margin: 0;
+  padding: 0;
+  background: #f4f7fc; /* Light background color */
+}
+
+/* Hero Section Styling */
+.hero {
+  background: linear-gradient(
+    45deg,
+    #3498db,
+    #2980b9,
+    #1f618c
+  ); /* Gradient from blue to teal */
+  color: white; /* Light text for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+  animation: heroAnimation 2s ease-out;
+}
+
+@keyframes heroAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  max-width: 600px;
+  padding: 0 15px;
+}
+
+.hero h1 {
+  color: #f39c12;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInText 1s ease-out;
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #fff;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeInText 1s ease-out 0.5s forwards;
+}
+
+.cta-btn {
+  background-color: #7c319c;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  animation: fadeInText 1s ease-out 1s forwards;
+}
+
+.cta-btn:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+  animation: pulseEffect 0.7s ease-out infinite;
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Quick Links Section */
+.quick-links {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-top: -50px;
+  border-radius: 10px;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-links h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #2d3436;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Styling for each link card */
+.link-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 30px;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  opacity: 0;
+  animation: fadeInCard 1.5s ease-out 0.7s forwards;
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.link-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background-color: #ecf0f1;
+}
+
+.link-card h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #4a69bd;
+  letter-spacing: 1px;
+}
+
+.link-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #7f8c8d;
+}
+
+/* Adding icons inside the link cards */
+.link-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #f39c12;
+  transition: color 0.3s ease;
+}
+
+.link-card:hover .icon {
+  color: #2980b9;
+}
+
+/* Hover Effect on Link Cards */
+.link-card:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    padding: 20px 10px;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  /* Quick Links Section */
+  .quick-links {
+    padding: 40px 20px;
+  }
+
+  .quick-links h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .links-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .link-card {
+    width: 90%;
+    padding: 25px;
+    margin: 0 auto;
+  }
+
+  .link-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .link-card p {
+    font-size: 0.9rem;
+  }
+}

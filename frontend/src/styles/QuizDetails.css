@@ -1,0 +1,389 @@
+body {
+  background-color: #fff;
+}
+
+/* Container for the entire quiz details page */
+.quiz-details-container {
+  width: 65%;
+  margin: 15vh auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.quiz-details-container:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Header style */
+.quiz-details-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(163, 160, 171, 0.1);
+}
+
+/* Loading message style */
+.loading-message {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #849ab1;
+}
+
+/* Error message style */
+.error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f44336;
+}
+
+p div .display-correct {
+  background-color: black;
+}
+
+/* Styling for the quiz question */
+.quiz-question {
+  margin-bottom: 30px;
+}
+
+.quiz-question h3 {
+  font-size: 1.8rem;
+  color: rgb(15, 121, 251);
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the list of options */
+.quiz-question ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for each option */
+.option {
+  cursor: pointer;
+  padding: 12px 20px;
+  margin: 10px 0;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover effect for options */
+.option:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* Style for correct and incorrect options */
+.option.correct {
+  background-color: #4caf50; /* Green for correct answer */
+  color: white;
+}
+
+.option.incorrect {
+  background-color: #f44336; /* Red for incorrect answer */
+  color: white;
+}
+
+/* Feedback message for the selected answer */
+.feedback {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.feedback.correct {
+  color: #28a745; /* Green text for correct */
+}
+
+.feedback.incorrect {
+  color: #dc3545; /* Red text for incorrect */
+}
+
+.correct-answer {
+  font-size: 1.1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Navigation buttons container */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Style for navigation buttons */
+.navigation-buttons button {
+  padding: 12px 20px;
+  background-color: #fbca07;
+  color: rgb(29, 29, 29);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Disable button when it's not clickable */
+.navigation-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Hover effect for buttons */
+.navigation-buttons button:hover {
+  transform: scale(1.05);
+}
+
+/* Style for the Start button */
+.start-button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Style for the Submit button */
+.submit-button {
+  padding: 12px 20px;
+  background-color: #007bff; /* Blue color for Submit button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-button:hover {
+  background-color: #0056b3; /* Darker blue for hover */
+  transform: scale(1.05);
+}
+
+/* Score section style */
+.score {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+/* Correct answer feedback */
+.correct-answer-feedback {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+  font-style: italic;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .quiz-details-container {
+    width: 90%;
+  }
+
+  .quiz-question h3 {
+    font-size: 1.5rem;
+  }
+
+  .option {
+    font-size: 1rem;
+  }
+
+  .navigation-buttons button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  /* Style adjustments for smaller buttons */
+  .start-button,
+  .submit-button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+.score h3 {
+  color: #d47226; /* Attention-grabbing blue */
+  font-weight: 600;
+  animation: scoreAnimation 3s ease-in-out;
+}
+
+/* Animation for the score heading */
+@keyframes scoreAnimation {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Disable cursor when the button is disabled */
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* General styling for the score message */
+.score-message {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  animation: messageAppear 0.5s ease-in-out;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Exceptional (Perfect Score) */
+.score-message p.exceptional {
+  color: #28a745; /* Green */
+}
+
+/* Great Work (Above 75%) */
+.score-message p.great {
+  color: #007bff; /* Blue */
+}
+
+/* Good Effort (Above 50%) */
+.score-message p.good {
+  color: #ffc107; /* Yellow/Orange */
+}
+
+/* Keep Going (Below 50%) */
+.score-message p.keep-going {
+  color: #dc3545; /* Red */
+}
+
+/* Hover effect (for all message types) */
+.score-message:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 14px rgba(230, 133, 6, 0.2);
+}
+
+/* Focused Styling for Message Heading */
+.score-message h3 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Paragraph Style for Descriptive Text */
+.score-message p {
+  font-size: 1.4rem;
+  font-style: italic;
+  animation: comeOut 0.5s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+@keyframes comeOut {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .score-message {
+    font-size: 1.4rem;
+    padding: 15px;
+    max-width: 90%;
+  }
+}
+
+/* Quiz Rules Styles */
+.quiz-rules {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-rules h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.quiz-rules p {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.quiz-rules ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.quiz-rules li {
+  margin-bottom: 5px;
+}
+
+h2.quiz-name {
+  color: rgb(246, 246, 7);
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(245, 241, 4, 0.6),
+    -2px -2px 3px rgba(117, 114, 114, 0.6),
+    2px -2px 3px rgba(117, 114, 114, 0.6), -2px 2px 3px rgba(117, 114, 114, 0.6);
+}
+
+.start-button {
+  margin: 20px auto;
+  display: block;
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}

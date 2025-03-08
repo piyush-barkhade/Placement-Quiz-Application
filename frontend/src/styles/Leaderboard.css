@@ -1,0 +1,184 @@
+/* src/styles/Leaderboard.css */
+
+/* General page styling */
+.leaderboard-page {
+  background-color: #e6aaf3; /* Light gray background for a clean look */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.leaderboard-container {
+  background-color: #edf4f1;
+  border-radius: 20px; /* Modern, rounded corners */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); /* Deep shadow for depth */
+  width: 80%;
+  max-width: 1000px;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatEffect 3s ease-in-out infinite; /* Floating effect */
+}
+
+/* Hover effect for leaderboard container */
+.leaderboard-container:hover {
+  transform: translateY(-10px); /* Subtle lift on hover */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Floating animation for leaderboard container */
+@keyframes floatEffect {
+  0% {
+    transform: translateY(0); /* Start at normal position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up slightly */
+  }
+  100% {
+    transform: translateY(0); /* Return to original position */
+  }
+}
+
+/* Header Styling */
+.leaderboard-header {
+  color: #48a700; /* Rich purple for the header */
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  animation: fadeIn 1s ease-out; /* Fade-in animation for header */
+  text-shadow: 0 20px 60px rgba(2, 2, 2, 0.2);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table Styling */
+.leaderboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+  padding: 14px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 2px solid #e6e6e6; /* Light border for row separation */
+  font-family: "Poppins", sans-serif;
+}
+
+.leaderboard-table th {
+  background-color: #007bff; /* Deep purple header */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-table tr:nth-child(even) {
+  background-color: #f3f3f3; /* Light grey background for even rows */
+}
+
+.leaderboard-table td {
+  color: #333;
+  font-weight: 500;
+}
+
+.leaderboard-table tr:first-child th {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.leaderboard-table tr:last-child td {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Responsive Design */
+
+/* For tablets and below (max-width: 768px) */
+@media (max-width: 768px) {
+  .leaderboard-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .leaderboard-header {
+    font-size: 28px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* For mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .leaderboard-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .leaderboard-header {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .leaderboard-table tr:nth-child(even) {
+    background-color: #fafafa; /* Even lighter background for mobile */
+  }
+
+  .leaderboard-page {
+    margin-top: 0;
+    padding: 10px;
+  }
+}
+
+/* For larger screens (desktops and above 1000px) */
+@media (min-width: 1000px) {
+  .leaderboard-container {
+    width: 75%;
+    padding: 40px;
+  }
+
+  .leaderboard-header {
+    font-size: 40px;
+  }
+
+  .leaderboard-table th,
+  .leaderboard-table td {
+    font-size: 20px;
+  }
+}
+
+/* Golden Highlight Effect for Top 3 */
+.leaderboard-table tr:nth-child(1) td,
+.leaderboard-table tr:nth-child(2) td,
+.leaderboard-table tr:nth-child(3) td {
+  background-color: #ffe449; /* Gold color for top 3 */
+  color: #333; /* Dark text for better readability */
+  font-weight: bold;
+}

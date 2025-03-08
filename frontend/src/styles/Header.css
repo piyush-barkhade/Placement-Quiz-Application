@@ -1,0 +1,202 @@
+/* Header Styling */
+header {
+  background: linear-gradient(
+    45deg,
+    #a750c9,
+    #7c319c,
+    #641893
+  ); /* Gradient with purple tones */
+  padding: 25px 50px; /* Spacing for a clean layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  transition: background 1s ease-in-out; /* Smooth transition for background */
+  position: relative;
+}
+
+header h1 {
+  color: #ffffff;
+}
+
+/* Navigation Styling */
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  font-size: 20px;
+  margin-left: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif; /* Clean, modern font */
+  letter-spacing: 1.5px;
+  position: relative;
+}
+
+header nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #eccd8b; /* Pinkish underline */
+  transition: width 0.3s ease;
+}
+
+header nav a:hover {
+  color: #f3b227; /* Change link color to pinkish on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+header nav a:hover::before {
+  width: 100%; /* Underline grows on hover */
+}
+
+header nav a.active {
+  color: #f3b227; /* Highlight color */
+  font-weight: bold;
+}
+
+/* Button Styling */
+.logout-btn {
+  background-color: #e53935; /* Red button for logout */
+  color: white;
+  font-size: 20px;
+  padding: 8px 20px;
+  margin-left: 30px;
+  margin-top: -4px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+.logout-btn:active {
+  background-color: #c62828; /* Even darker red when clicked */
+}
+
+/* Responsive Design */
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  header {
+    padding: 20px 30px;
+    flex-direction: column; /* Stack logo and nav vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack the links vertically */
+    align-items: flex-start;
+  }
+
+  header nav a {
+    font-size: 16px;
+    margin-left: 0;
+    margin-bottom: 10px; /* Space between links */
+  }
+}
+
+/* For Mobile Devices (smaller than tablets) */
+@media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  header nav a {
+    font-size: 14px;
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start;
+    margin-top: 10px; /* Space between logo and nav */
+  }
+
+  header nav a {
+    margin-left: 0;
+    margin-bottom: 8px; /* Space between links */
+  }
+}
+
+/* Kebab Menu Styles */
+.kebab-menu {
+  display: none; /* Hide it on larger screens */
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.kebab-dot {
+  width: 8px;
+  height: 8px;
+  margin: 3px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+/* Mobile Styling */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* Hide regular nav on mobile */
+  }
+
+  .kebab-menu {
+    display: block; /* Show kebab menu on mobile */
+  }
+
+  .kebab-menu-items {
+    display: block; /* Show kebab menu items on click */
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 150px;
+    z-index: 1000;
+  }
+
+  .kebab-menu-items ul {
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+  }
+
+  .kebab-menu-items li {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f1f1f1;
+    border-radius: 8px;
+  }
+
+  li.logout-hover-color {
+    color: #fb0404;
+  }
+
+  .kebab-menu-items li:hover {
+    background-color: #f0f0f0;
+  }
+
+  li.logout-hover-color:hover {
+    color: #fff;
+    background-color: #fb0404;
+  }
+}

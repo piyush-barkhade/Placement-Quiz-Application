@@ -1,0 +1,242 @@
+/* General Styling for the Login Page */
+.login {
+  background: linear-gradient(
+    45deg,
+    #3498db,
+    #2980b9,
+    #1f618c
+  ); /* Gradient background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  animation: floatEffect 3s ease-in-out infinite; /* Floating effect */
+}
+
+/* Form Styling */
+.form {
+  background-color: #fff8e1; /* Warm gold/cream background */
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 400px;
+  width: 100%;
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Floating animation for the login form */
+@keyframes floatEffect {
+  0%,
+  100% {
+    transform: translateY(0); /* Start at normal position */
+  }
+  25% {
+    transform: translateY(-5px); /* Move up slightly */
+  }
+  50% {
+    transform: translateY(0); /* Return to normal position */
+  }
+  75% {
+    transform: translateY(5px); /* Move down slightly */
+  }
+}
+
+/* Heading Styling */
+h2 {
+  color: #fb9803; /* Golden color for heading */
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: fadeIn 1s ease-out; /* Fade-in effect */
+  text-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Input Fields Styling */
+input {
+  font-size: 16px;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #d4af37; /* Golden border */
+  border-radius: 8px;
+  width: 100%;
+  background-color: #fff8e1; /* Warm gold/cream background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInInputs 0.5s ease-out;
+}
+
+input::placeholder {
+  opacity: 0.6;
+}
+
+@keyframes fadeInInputs {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input:focus {
+  border-color: #c79f3d; /* Darker gold on focus */
+  outline: none;
+  box-shadow: 0 0 10px rgba(199, 159, 61, 0.3); /* Subtle golden glow */
+}
+
+/* Button Styling */
+button {
+  padding: 14px;
+  font-size: 16px;
+  margin-top: 12px;
+  width: 100%;
+  background-color: #f99f04; /* Golden yellow button */
+  color: white;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s, transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  background-color: #e1b13b; /* Slightly darker gold on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+button:active {
+  background-color: #d49f1a; /* Even darker gold when clicked */
+  transform: scale(0.98); /* Slight shrink when clicked */
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+button:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Error Message Styling */
+p {
+  color: #949292;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  opacity: 0;
+  animation: showError 1s ease-out forwards;
+}
+
+@keyframes showError {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Success Message Styling */
+.success {
+  color: #2ecc71; /* Green color for success */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  opacity: 0;
+  animation: showSuccess 1s ease-out forwards;
+}
+
+@keyframes showSuccess {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+
+/* For tablets and below (max-width: 768px) */
+@media (max-width: 768px) {
+  .form {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 24px; /* Adjust header font size for smaller screens */
+  }
+
+  input {
+    font-size: 14px; /* Smaller input font size on smaller screens */
+  }
+
+  button {
+    font-size: 14px; /* Adjust button font size for smaller screens */
+    padding: 12px;
+  }
+}
+
+/* For very small screens (phones in portrait mode) */
+@media (max-width: 480px) {
+  .form {
+    padding: 20px;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 22px; /* Even smaller font size for the heading */
+  }
+
+  input {
+    font-size: 14px; /* Further reduce input font size */
+  }
+
+  button {
+    font-size: 14px; /* Button font size adjustment */
+  }
+
+  p {
+    font-size: 14px; /* Error message font size */
+  }
+}
